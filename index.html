@@ -104,7 +104,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center">
                 <h1 class="nova-hero-title mb-6 fade-in">
-                    TMG <span class="gradient-text">Enterprises.</span>
+                    <span id="typed-text"></span>
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto fade-in">
                     Your trusted partner for seamless company registration and business setup services in Zimbabwe<br>
@@ -500,6 +500,40 @@
                     el.classList.add('visible');
                 }
             });
+        });
+
+        // Typing effect for "TMG Enterprises."
+        document.addEventListener('DOMContentLoaded', () => {
+            const text = 'TMG ';
+            const gradientText = 'Enterprises.';
+            const typedTextEl = document.getElementById('typed-text');
+            let i = 0;
+            let j = 0;
+
+            function typeNormal() {
+                if (i < text.length) {
+                    typedTextEl.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeNormal, 120);
+                } else {
+                    // Start typing gradient text
+                    typedTextEl.innerHTML += `<span class="gradient-text"></span>`;
+                    typeGradient();
+                }
+            }
+
+            function typeGradient() {
+                const gradientSpan = typedTextEl.querySelector('.gradient-text');
+                if (j < gradientText.length) {
+                    gradientSpan.innerHTML += gradientText.charAt(j);
+                    j++;
+                    setTimeout(typeGradient, 120);
+                }
+            }
+
+            // Clear any existing content and start typing
+            typedTextEl.innerHTML = '';
+            typeNormal();
         });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9796022af1e895f5',t:'MTc1NjkxMDQ5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
