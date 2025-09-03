@@ -18,21 +18,9 @@
         }
     </script>
     <style>
-        html {
-            font-size: 20px; /* Increase base font size for all text */
-        }
-        @media (min-width: 640px) {
-            html {
-                font-size: 22px;
-            }
-        }
-        @media (min-width: 1024px) {
-            html {
-                font-size: 24px;
-            }
-        }
         body {
             background: #16243b; /* Nova-like dark blue */
+            font-size: 18px; /* Increased base font size for mobile */
         }
         .nova-hero-bg {
             background: #16243b;
@@ -60,6 +48,10 @@
             .nova-hero-title {
                 font-size: 5.5rem;
             }
+            /* Reset base font size for larger screens */
+            body {
+                font-size: 16px;
+            }
         }
         .card-hover {
             transition: all 0.3s ease;
@@ -76,6 +68,41 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+        
+        /* Mobile-specific font size improvements */
+        .service-card h3 {
+            font-size: 1.5rem; /* Larger heading for services on mobile */
+            font-weight: 700;
+        }
+        .service-card p {
+            font-size: 1.1rem; /* Larger paragraph text for services */
+            line-height: 1.6;
+        }
+        
+        /* Increase font sizes for other sections on mobile */
+        #about h2, #contact h2, #services h2 {
+            font-size: 2.25rem;
+        }
+        #about p, #contact p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        /* Adjust for larger screens */
+        @media (min-width: 768px) {
+            .service-card h3 {
+                font-size: 1.25rem;
+            }
+            .service-card p {
+                font-size: 1rem;
+            }
+            #about h2, #contact h2, #services h2 {
+                font-size: 2.5rem;
+            }
+            #about p, #contact p {
+                font-size: 1.125rem;
+            }
         }
     </style>
 </head>
@@ -151,7 +178,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in service-card">
                     <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -161,7 +188,7 @@
                     <p class="text-gray-600">Complete company registration services including name reservation, incorporation documents, and regulatory compliance.</p>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in service-card">
                     <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -171,7 +198,7 @@
                     <p class="text-gray-600">Assistance with obtaining all necessary business licenses and permits required for your industry and location.</p>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in service-card">
                     <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -181,7 +208,7 @@
                     <p class="text-gray-600">Complete tax registration services including VAT registration, PAYE setup, and ongoing compliance support.</p>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in service-card">
                     <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
@@ -191,7 +218,7 @@
                     <p class="text-gray-600">Expert legal advice on business structure, compliance requirements, and regulatory matters.</p>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in service-card">
                     <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
@@ -201,7 +228,7 @@
                     <p class="text-gray-600">Professional preparation of all required documents, contracts, and legal paperwork for your business.</p>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in service-card">
                     <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z"></path>
@@ -509,6 +536,7 @@
                 formMessage.classList.add('hidden');
             }, 5000);
         });
+
 
         // Initialize fade-in animations for elements already in view
         window.addEventListener('load', () => {
